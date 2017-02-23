@@ -38,7 +38,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'figaro'
 
 gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
 gem 'capistrano-rvm'
 gem 'capistrano3-puma'

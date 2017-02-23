@@ -5,14 +5,15 @@ set :application, "rasp_api"
 set :repo_url, "git@github.com:javierrodriguez94/rasp_api.git"
 set :password => ENV["ssh_pass"]
 set :branch, :master
+set :resque_environment_task, true
 #set :repo_url, 'git@bitbucket.org:USERNAME/REPO-NAME.git'
 set :pty, true
 
 
-set :default_shell   , '/bin/bash -l'
-set :rvm_ruby_version, '2.4.0'
+set :default_shell   , "/bin/bash -l"
+set :rvm_ruby_version, "2.4.0"
 set :rvm_type, :user
-set :rvm_ruby_string, '2.4.0'
+
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/rasp_api" #'/home/USER/YOUR-APP-FOLDER'
@@ -33,8 +34,7 @@ namespace :deploy do
     on roles(:web), in: :sequence, wait: 5 do
       #execute("cd #{release_path} && rvm use 2.4.0 && bundle install")
       within release_path do
-        execute(:bundle, "install")
-        execute :bundle #, "--without development test"
+        execute :bundle , "--without development test"
       end
     end
   end
