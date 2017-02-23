@@ -50,6 +50,8 @@ GEM
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
     capistrano-harrow (0.5.3)
+    capistrano-linked-files (1.2.0)
+      capistrano (~> 3.1)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -143,6 +145,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano
+  capistrano-linked-files
   capistrano-rvm
   capistrano3-puma
   figaro
@@ -158,4 +161,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.14.4
+   1.14.5

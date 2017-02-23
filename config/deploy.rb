@@ -17,8 +17,7 @@ set :rvm_type, :user
 set :deploy_to, "/var/www/rasp_api" #'/home/USER/YOUR-APP-FOLDER'
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, ['config/application.yml', 'config/secrets.yml']).
-    push('config/application.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/application.yml')
 
 # Default value for linked_dirs is []
 #set :linked_dirs, fetch(:linked_dirs, []).
