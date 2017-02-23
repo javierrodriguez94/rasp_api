@@ -8,6 +8,8 @@ set :branch, :master
 #set :repo_url, 'git@bitbucket.org:USERNAME/REPO-NAME.git'
 set :pty, true
 
+
+set :default_shell   , '/bin/bash -l'
 set :rvm_ruby_version, '2.4.0'
 set :rvm_type, :user
 set :rvm_ruby_string, '2.4.0'
@@ -29,8 +31,10 @@ set :keep_releases, 5
 namespace :deploy do
   task :install_dependencies do
     on roles(:web), in: :sequence, wait: 5 do
+      #execute("cd #{release_path} && rvm use 2.4.0 && bundle install")
       within release_path do
-        execute :bundle, "--without development test"
+        execute(:bundle, "install")
+        execute :bundle #, "--without development test"
       end
     end
   end
