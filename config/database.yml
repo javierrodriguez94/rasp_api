@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: rasp_api_production
-  username: rasp_api
+  username: <%= ENV['RASP_API_DATABASE_USER'] %>
   password: <%= ENV['RASP_API_DATABASE_PASSWORD'] %>
