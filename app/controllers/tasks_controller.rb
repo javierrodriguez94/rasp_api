@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def get_temp
-    tmp = get_cpu_temperature
+    tmp = get_disk_Space
     render json: tmp
   end
   def get_ram_info
