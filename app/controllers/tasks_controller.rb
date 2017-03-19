@@ -11,7 +11,7 @@ class TasksController < ApplicationController
 
   def gpio
     RPi::GPIO.set_numbering :board
-    Pi::GPIO.setup 2, :as => :input
+    RPi::GPIO.setup 2, :as => :input
     pin = RPi::GPIO.high? PIN_NUM
     render json: "a"
   end
