@@ -49,9 +49,15 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
+    capistrano-bundler (1.2.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
     capistrano-linked-files (1.2.0)
       capistrano (~> 3.1)
+    capistrano-rails (1.2.2)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -117,6 +123,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    rpi_gpio (0.3.2)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -146,6 +153,7 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-linked-files
+  capistrano-rails
   capistrano-rvm
   capistrano3-puma
   figaro
@@ -153,6 +161,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.18, < 0.5)
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rpi_gpio
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data

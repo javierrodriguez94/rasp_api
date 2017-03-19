@@ -25,6 +25,12 @@ set :linked_files, fetch(:linked_files, []).push('config/application.yml', 'conf
 
 
 namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "/etc/init.d/puma restart" # assumes puma jungle tools installed
+    end
+  end
   task :install_dependencies do
     on roles(:web), in: :sequence, wait: 5 do
       #execute("cd #{release_path} && rvm use 2.4.0 && bundle install")

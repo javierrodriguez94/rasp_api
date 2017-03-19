@@ -23,6 +23,11 @@ gem 'puma', '~> 3.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+  gem 'capistrano-linked-files'
+  gem 'capistrano-rails'
 end
 
 group :development do
@@ -37,7 +42,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'figaro'
 
-gem 'capistrano'
-gem 'capistrano-rvm'
-gem 'capistrano3-puma'
-gem 'capistrano-linked-files'
+gem 'rpi_gpio'
