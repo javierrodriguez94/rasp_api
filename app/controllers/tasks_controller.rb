@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  require 'rpi_gpio'
 
   def get_temp
     tmp = get_disk_Space
