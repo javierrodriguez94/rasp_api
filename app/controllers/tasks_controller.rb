@@ -1,5 +1,6 @@
+require 'rpi_gpio'
+
 class TasksController < ApplicationController
-  require 'rpi_gpio'
 
   def get_temp
     tmp = get_disk_Space
@@ -11,10 +12,10 @@ class TasksController < ApplicationController
   end
 
   def gpio
-
+    p = params[:pin]
     RPi::GPIO.set_numbering :bcm
-    RPi::GPIO.setup 2, :as => :input
-    pin = RPi::GPIO.high? 2
+    RPi::GPIO.setup p, :as => :input
+    pin = RPi::GPIO.high? p
     render json: pin
   end
 

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   get "/get_ram_info",  to: "tasks#get_ram_info"
   get "/get_temp",  to: "tasks#get_temp"
-  get "/gpio",  to: "tasks#gpio"
+  get "/gpio/:pin",  to: "tasks#gpio"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
