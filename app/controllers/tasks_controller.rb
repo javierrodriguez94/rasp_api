@@ -10,11 +10,11 @@ class TasksController < ApplicationController
   end
 
   def gpio
-    GPIO.setmode(GPIO.BCM)
-    #RPi::GPIO.set_numbering :board
+
+    RPi::GPIO.set_numbering :bcm
     RPi::GPIO.setup 2, :as => :input
-    pin = RPi::GPIO.high? PIN_NUM
-    render json: "a"
+    pin = RPi::GPIO.high? 2
+    render json: pin
   end
 
 
