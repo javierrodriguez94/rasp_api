@@ -19,6 +19,10 @@ class TasksController < ApplicationController
     render json: pin
   end
 
+  def image
+    render json: %x{fswebcam -p YUYV -r 1280x720 imagen.jpg}
+  end
+
 
 
 
