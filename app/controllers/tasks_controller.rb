@@ -3,7 +3,7 @@ require 'rpi_gpio'
 class TasksController < ApplicationController
 
   def get_temp
-    tmp = 23
+    tmp = get_cpu_temperature
     render json: tmp
   end
   def get_ram_info
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
 
   def get_cpu_temperature
     debugger
-    %x{optvcgencmd measure_temp}.lines.first.sub(/temp=/, '').sub(/C\n/, '')
+    %x{/opt/vc/bin/vcgencmd measure_temp}.lines.first.sub(/temp=/, '').sub(/C\n/, '')
   end
 
   def get_cpu_use
