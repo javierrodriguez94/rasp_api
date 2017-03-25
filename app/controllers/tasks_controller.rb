@@ -11,16 +11,16 @@ class TasksController < ApplicationController
     render json: info
   end
 
-  # def gpio
-  #   p = params[:pin]
-  #   RPi::GPIO.set_numbering :bcm
-  #   RPi::GPIO.setup p, :as => :input
-  #   pin = RPi::GPIO.high? p
-  #   render json: pin
-  # end
+  def gpio
+    p = params[:pin]
+    RPi::GPIO.set_numbering :bcm
+    RPi::GPIO.setup p, :as => :input
+    pin = RPi::GPIO.high? p
+    render json: pin
+  end
 
   def image
-    %x{fswebcam -p YUYV -r 1280x720 imagen.jpg}
+    system "fswebcam -p YUYV -r 1280x720 imagen.jpg"
     render json: "ok"
   end
 
