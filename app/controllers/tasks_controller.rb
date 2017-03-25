@@ -3,7 +3,7 @@ require 'rpi_gpio'
 class TasksController < ApplicationController
 
   def get_temp
-    tmp = get_disk_Space
+    tmp = 23
     render json: tmp
   end
   def get_ram_info
