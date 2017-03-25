@@ -3,7 +3,7 @@ require 'rpi_gpio'
 class TasksController < ApplicationController
 
   def get_temp
-    tmp = get_cpu_temperature
+    tmp = 23 #get_cpu_temperature
     render json: tmp
   end
   def get_ram_info
