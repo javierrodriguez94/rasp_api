@@ -14,9 +14,13 @@ class TasksController < ApplicationController
   def gpio
     p = params[:pin]
     RPi::GPIO.set_numbering :bcm
-    RPi::GPIO.setup p, :as => :input
-    pin = RPi::GPIO.high? p
-    render json: pin
+    RPi::GPIO.setup 7, :as => :output
+    if p==1
+      RPi::GPIO.set_high 7
+    else
+      RPi::GPIO.set_low 7
+    end
+    render json: p
   end
 
   def image
