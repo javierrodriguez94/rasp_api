@@ -13,3 +13,16 @@ This system is composed by two elements:
 |---------------|------------------------|---------------------|
 |Technology     |     Android native     |      Rails Api      |
 |RepositoryName |[rasp_api-android-app](https://github.com/javierrodriguez94/rasp_api-android-app) |[rasp_api server](https://github.com/javierrodriguez94/rasp_api) |
+
+
+## Deploy
+
+##### Todo
+
+## Initial Setup
+
+##### Todo
+
+## How to use
+
+##### Todo
