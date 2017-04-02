@@ -3,7 +3,6 @@ lock "3.7.2"
 
 set :application, "rasp_api"
 set :repo_url, "git@github.com:javierrodriguez94/rasp_api.git"
-set :branch, :master
 set :resque_environment_task, true
 set :pty, true
 
