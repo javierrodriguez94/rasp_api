@@ -7,4 +7,4 @@ set :ssh_options, {
     forward_agent: false,
 }
 
-set :branch, :gpio
+set :branch, :master

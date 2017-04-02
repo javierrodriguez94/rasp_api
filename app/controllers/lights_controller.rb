@@ -1,14 +1,14 @@
 class LightsController < ApplicationController
 
-  def light_on
+  def on
     gpio ENV["LIGHT_PIN"], 0
   end
 
-  def light_off
+  def off
     gpio ENV["LIGHT_PIN"], 1
   end
 
-  def light_state
+  def state
     render json: gpio(ENV["LIGHT_PIN"], nil)
   end
 

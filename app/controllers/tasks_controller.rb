@@ -2,7 +2,7 @@ require 'rpi_gpio'
 
 class TasksController < ApplicationController
 
-  def cpu_temp
+  def temp
     render json: get_cpu_temperature
   end
 
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     render json: get_disk_space
   end
 
-  def ram_info
+  def ram
     info = %x{free}.lines.to_a[1].split[1,3]
     render json: info
   end
