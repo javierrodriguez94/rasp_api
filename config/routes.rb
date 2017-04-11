@@ -1,30 +1,29 @@
 Rails.application.routes.draw do
   #constraints(ip: /192\.\d+\.\d+\.\d+/) do
-    resources :users
-    resources :lights
-    resources :sensors
-    resources :camera
-    resources :tasks
+  resources :users
+  #resources :lights
+  #resources :sensors
+  #resources :camera
+  #resources :tasks
   #end
 
   controller :lights do
-    get "lights/on" => :on
-    get "lights/off" => :off
-    get "lights/state" => :state
+    get "/lights/on" => :on
+    get "/lights/off" => :off
+    get "/lights/state" => :state
   end
 
   controller :camera do
-    get "camera" => :photo
+    get "/camera" => :photo
   end
 
   controller :tasks do
-    get "tasks/cpu" => :cpu
-    get "tasks/disk" => :disk
-    get "tasks/ram" => :ram
+    get "/tasks/cpu" => :cpu
+    get "/tasks/disk" => :disk
+    get "/tasks/ram" => :ram
     get "tasks/temp" => :temp
   end
 
-  get "camera", to: "camera#photo"
   #get "/get_ram_info",  to: "tasks#get_ram_info"
   #get "/get_temp",  to: "tasks#get_temp"
   #get "/gpio/:pin",  to: "tasks#gpio"
