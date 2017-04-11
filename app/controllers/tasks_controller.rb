@@ -25,15 +25,15 @@ class TasksController < ApplicationController
 
 
   def get_cpu_temperature
-    system("/opt/vc/bin/vcgencmd measure_temp").lines.first.sub(/temp=/, '').sub(/C\n/, '')
+    %x{"/opt/vc/bin/vcgencmd measure_temp"}.lines.first.sub(/temp=/, '').sub(/C\n/, '')
   end
 
   def get_cpu_use
-    system("top -n1").lines.find{ |line| /Cpu\(s\):/.match(line) }.split[1]
+    %x{"top -n1"}.lines.find{ |line| /Cpu\(s\):/.match(line) }.split[1]
   end
 
   def get_disk_space
-    system("df -h /").lines.to_a[1].split[1,4]
+    %x{"df -h /"}.lines.to_a[1].split[1,4]
   end
 
 end
