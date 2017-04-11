@@ -2,10 +2,12 @@ class LightsController < ApplicationController
 
   def on
     gpio ENV["LIGHT_PIN"], 0
+    render json: "ok"
   end
 
   def off
     gpio ENV["LIGHT_PIN"], 1
+    render json: "ok"
   end
 
   def state
@@ -16,6 +18,7 @@ class LightsController < ApplicationController
   private
 
   def gpio pin, value
+    pin.to_i
     raise("GPIO Error - Invalid pin #{pin}\n") if pin > 40 or pin < 0
     RPi::GPIO.set_numbering :board
     RPi::GPIO.setup pin, :as => :output
