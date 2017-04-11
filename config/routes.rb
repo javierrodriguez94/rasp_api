@@ -17,12 +17,14 @@ Rails.application.routes.draw do
     get "camera" => :photo
   end
 
-  controller :taks do
+  controller :tasks do
     get "tasks/cpu" => :cpu
     get "tasks/disk" => :disk
     get "tasks/ram" => :ram
     get "tasks/temp" => :temp
   end
+
+  get "camera", to: "camera#photo"
   #get "/get_ram_info",  to: "tasks#get_ram_info"
   #get "/get_temp",  to: "tasks#get_temp"
   #get "/gpio/:pin",  to: "tasks#gpio"
