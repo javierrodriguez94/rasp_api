@@ -24,6 +24,12 @@ Rails.application.routes.draw do
     get "tasks/temp" => :temp
   end
 
+  controller :sensors do
+    get "sensors/temp" => :temp
+    get "sensors/humidity" => :humidity
+  end
+
+
   #get "/get_ram_info",  to: "tasks#get_ram_info"
   #get "/get_temp",  to: "tasks#get_temp"
   #get "/gpio/:pin",  to: "tasks#gpio"

@@ -1,13 +1,7 @@
 require 'rpi_gpio'
-require "dht-sensor-ffi"
+
 
 class TasksController < ApplicationController
-
-  def temp
-    puts DhtSensor.read(21, 11)
-    render json: "ok"#val.temp+" "+val.humidity
-    #render json: get_cpu_temperature
-  end
 
   def cpu
     render json: get_cpu_use
