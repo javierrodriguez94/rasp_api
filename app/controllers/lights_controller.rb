@@ -25,7 +25,7 @@ class LightsController < ApplicationController
     if value.to_s == "0"
       RPi::GPIO.set_low pin
     elsif value.to_s == "1"
-      RPi::GPIO.set_hight pin
+      RPi::GPIO.set_high pin
     elsif value == nil
       RPi::GPIO.setup pin, :as => :input
       return Rpi::GPIO.input pin #Rpi::GPIO.low? pin ? 0 : 1
