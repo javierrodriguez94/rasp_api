@@ -15,8 +15,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    params[:token] = SecureRandom.urlsafe_base64
-    @user = User.new(user_params)
+    @user = User.new(name: "", token: SecureRandom.urlsafe_base64)
 
     if @user.save
       render json: @user.token, status: :created, location: @user
