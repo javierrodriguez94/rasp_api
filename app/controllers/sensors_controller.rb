@@ -3,14 +3,10 @@ class SensorsController < ApplicationController
   require "dht-sensor-ffi"
 
   def temp
-    pin = ENV["DHT_PIN"].to_i
-    type = ENV["DTH_TYPE"].to_i
-    render json: DhtSensor.read(pin, type ).temp
+    render json: DhtSensor.read(ENV["dht_pin"].to_i, ENV["dht_type"].to_i).temp
   end
 
   def humidity
-    pin = ENV["DHT_PIN"].to_i
-    type = ENV["DTH_TYPE"].to_i
-    render json: DhtSensor.read(pin, type).humidity
+    render json: DhtSensor.read(ENV["dht_pin"].to_i, ENV["dht_type"].to_i).humidity
   end
 end
