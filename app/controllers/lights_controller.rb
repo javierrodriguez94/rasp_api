@@ -10,11 +10,6 @@ class LightsController < ApplicationController
     render json: "ok"
   end
 
-  def state
-    render json: gpio(ENV["LIGHT_PIN"], nil)
-  end
-
-
   private
 
   def gpio pin, value

@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   controller :lights do
     get "/lights/on" => :on
-    get "/push" => :on
     get "/lights/off" => :off
     get "/lights/state" => :state
   end
