@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  constraints(ip: /192\.\d+\.\d+\.\d+/) do
-    resources :users
-  end
+  #constraints(ip: /192\.\d+\.\d+\.\d+/) do
+  resources :users
+  #end
 
   #resources :lights
   #resources :sensors
