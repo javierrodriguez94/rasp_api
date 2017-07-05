@@ -31,6 +31,11 @@ Rails.application.routes.draw do
     get "sensors/humidity" => :humidity
   end
 
+  controller :firebase do
+    get "push" => :send_notification
+    get "set_token" => :save_token
+  end
+
 
   #get "/get_ram_info",  to: "tasks#get_ram_info"
   #get "/get_temp",  to: "tasks#get_temp"

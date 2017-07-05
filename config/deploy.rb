@@ -38,7 +38,7 @@ namespace :deploy do
       end
     end
   end
-  after :published, :install_dependencies
+  before :migrate, :install_dependencies
 end
 
 
